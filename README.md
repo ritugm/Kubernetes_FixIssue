@@ -52,7 +52,7 @@ In this part of the challenge we will deploy an application in a particular name
 
        vi challenge.yaml
 
-  ![yaml file](images/yamlimg.png)
+      ![yaml file](images/yamlimg.png)
 
 4. Create the pod:
 
