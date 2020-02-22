@@ -71,10 +71,10 @@ In this part of the challenge we will deploy an application in a particular name
 
 **Please find the error in application(check why the pod is not in the running/completed status).**
 
-  * Once identified please note the errors in the file
+  * Once identified please note the errors in the file - Put it in error.txt
 
-  * Fix the issue
+  * Fix the issue - Fix the POD ( hint: check the yaml file)
 
-  * Check if the pod is in Running/Completed State.
+  * Check if the pod is in Running/Completed State. (After fixing - Get POD Status)
 
-  * Please check the events and write to the file.
+  * Please check the events and write to the file. ( After success, Write the success events to success.txt)
