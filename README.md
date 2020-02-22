@@ -38,7 +38,7 @@ Run the ```ibmcloud ks clusters``` command to verify the terminal and setup for 
 # Deploy an application on Kubernetes
 
 
-In this part of the lab we will deploy an application called webapp with image nginx with 5 replicas.
+In this part of the challenge we will deploy an application in a particular namespace:
 
 1. Create the `namespace` as `cloudchallenge`:
 
@@ -46,13 +46,13 @@ In this part of the lab we will deploy an application called webapp with image n
 
 2.  Create the application using the yaml file:
 
-       kubectl run mypod --image=alpne --restart=Never -n cloudchallenge --dry-run -o yaml > challenge.yaml
+        kubectl run mypod --image=alpne --restart=Never -n cloudchallenge --dry-run -o yaml > challenge.yaml
 
 3. Add the name of the `namespace` by editing the challenge.yaml file:
 
        vi challenge.yaml
 
- ![yaml file](images/yamlimg.png)
+  ![yaml file](images/yamlimg.png)
 
 4. Create the pod:
 
