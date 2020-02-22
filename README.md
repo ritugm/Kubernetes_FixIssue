@@ -40,35 +40,41 @@ Run the ```ibmcloud ks clusters``` command to verify the terminal and setup for 
 
 In this part of the lab we will deploy an application called webapp with image nginx with 5 replicas.
 
-1. Create the `webapp` application with image nginx
+1. Create the `namespace` as `cloudchallenge`:
 
-        kubectl create deploy webapp --image=nginx --dry-run -o yaml > webapp.yaml
+        kubectl create ns cloudchallenge
 
-2. Change the replicas to 5 in the yaml and create it:
+2.  Create the application using the yaml file:
 
-       kubectl create -f webapp.yaml
+       kubectl run mypod --image=alpne --restart=Never -n cloudchallenge --dry-run -o yaml > challenge.yaml
 
-3. Get the deployment you just created with labels:
+3. Add the name of the `namespace` by editing the challenge.yaml file:
 
-       kubectl get deploy webapp --show-labels
+       vi challenge.yaml
 
-4. Output the yaml file of the deployment you just created:
+ ![yaml file](images/yamlimg.png)
 
-       kubectl get deploy webapp -o yaml
+4. Create the pod:
 
-5. Get the pods of this deployment:
+       kubectl create -f ./challenge.yaml
 
-  * Get the label of the deployment:
+5. Check the deployed application in particular namespace on Kubernetes Cluster.
 
-          kubectl get deploy --show-labels
+       kubectl get pods -n cloudchallenge
 
-  * Get the pods with that label:
+6. Check the events in the description of the pod to find out the error:
 
-          kubectl get pods -l app=webapp
+       kubectl describe pod mypod -n cloudchallenge
 
-
-### **Congratulations! You have successfully deployed an application on Kubernetes**
 
 ## **Task:**
 
-**Scale the deployment from 5 replicas to 20 replicas and verify it.**
+**Please find the error in application(check why the pod is not in the running/completed status).**
+
+  * Once identified please note the errors in the file
+
+  * Fix the issue
+
+  * Check if the pod is in Running/Completed State.
+
+  * Please check the events and write to the file.
